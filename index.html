@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mrunali | Frontend Developer</title>
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">Mrunali</div>
+
+<ul class="nav-links">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#learning">Learning</a></li>
+<li><a href="#interests">Interests</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section id="home" class="hero">
+
+<h1>Hello I'm <span>Mrunali</span></h1>
+
+<p>•Frontend Developer • UI Designer •Web Developer</p>
+
+<a href="#projects" class="btn">View My Work</a>
+
+</section>
+
+<!-- SERVICES -->
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="grid">
+
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">Git</div>
+<div class="skill">Python</div>
+<div class="skill">C</div>
+<div class="skill">C++</div>
+<div class="skill">Responsive Design</div>
+
+</div>
+
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="section-title">Projects</h2>
+
+<div class="grid" id="projects-container">
+
+</div>
+
+</section>
+
+<script>
+fetch("https://script.google.com/macros/s/AKfycbzJEO7ndddwXSYqO_ivWDDoiZvjkw_d45NqSdR9V7LT6qte3swU73c7ZPQUHD0WogSv/exec")
+.then(response => response.json())
+.then(data => {
+
+let container = document.getElementById("projects-container");
+
+container.innerHTML = "";
+
+data.forEach(project => {
+
+let card = `
+<div class="project-card">
+
+<h3>${project.title}</h3>
+
+<p>${project.description}</p>
+
+<a href="${project.link}" target="_blank">View Project</a>
+
+</div>
+`;
+
+container.innerHTML += card;
+
+});
+
+});
+</script>
+
+
+</section>
+
+<!-- LEARNING -->
+
+<section id="learning">
+
+<h2 class="section-title">Currently Learning</h2>
+
+<div class="grid">
+
+<div class="card">C</div>
+<div class="card">C++</div>
+<div class="card">Python</div>
+
+</div>
+
+</section>
+
+<!-- INTERESTS -->
+
+<section id="interests">
+
+<h2 class="section-title">Interests</h2>
+
+<div class="grid">
+
+<div class="card">Web Development</div>
+<div class="card">Artificial Intelligence</div>
+<div class="card">UI / UX Design</div>
+<div class="card">Tech Blogging</div>
+<div class="card">Graphic Design</div>
+<div class="card">Learning New Technologies</div>
+
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<h2 class="section-title">Contact Me</h2>
+
+<form id="contact-form">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+<button type="submit" class="btn">Send Message</button>
+
+</form>
+
+</section>
+
+<!-- SUCCESS POPUP -->
+
+<div id="popup">
+
+<div class="popup-box">
+
+<h3>Message Sent Successfully</h3>
+
+<p>Thank you for contacting me. I will reply soon.</p>
+
+<button onclick="closePopup()" class="btn">Close</button>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>© 2026 Mrunali |  Developer</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
